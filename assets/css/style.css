@@ -4,7 +4,20 @@ body {
   line-height: 1;
 }
 
+.container {
+  display: block;
+  background-color:	lightgrey;
+  border: 1px solid #eceff1;
+  border-radius: 8px;
+  box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
+    rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
+  margin: 60px auto;
+  padding: 20px;
+  width: 80vw;
+}
+
 textarea {
+  width: 80%;
   background: transparent;
   border: none;
   resize: none;
@@ -37,6 +50,8 @@ textarea {
 }
 
 .hour {
+  width: 10%;
+  text-align: center;
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
@@ -58,6 +73,7 @@ textarea {
 }
 
 .saveBtn {
+  width: 8%;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
