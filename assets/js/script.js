@@ -1,7 +1,8 @@
 var rootEl = $('.container')
 var timeEl = $('#currentDay');
 var currentTime = moment().format("dddd, MMMM Do");
-var hours = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
+var currentTimeHr = moment().format("ha");
+var hours = [moment.unix(8000000).format("ha"), moment.unix(5500000).format("ha"), moment.unix(1700000).format("ha"), moment.unix(2050000).format("ha"), moment.unix(1450000).format("ha"), moment.unix(7500000).format('ha'), moment.unix(5000000).format('ha'), moment.unix(1200000).format("ha"), moment.unix(9500000).format("ha")];
 
 function writeHourRows () {
     for (let i = 0; i < hours.length; i++) {
@@ -10,6 +11,7 @@ function writeHourRows () {
         var textAreaSection = $('<textarea>');
         var rowBtn = $('<div>');    
         var rowBtnImage = $('<img>');
+        var hourRowStyle = hours[i] < currentTimeHr ? "past" : hours[i] == currentTimeHr ? "present" : "future";
 
         // Create Row Element
         rootEl.append(rowEl);
@@ -20,8 +22,9 @@ function writeHourRows () {
         hourDiv.text(hours[i]);
         hourDiv.attr('class', 'hour');
 
-        // Create Calendar Event Field
+        // Create Calendar Event Field        
         rowEl.append(textAreaSection);
+        textAreaSection.attr('class', hourRowStyle);
 
         // Create Save Button
         rowEl.append(rowBtn);
