@@ -27,7 +27,7 @@
 
 ## Mock-Up
 
-![Web APIs Challenge Mock-Up](./assets/images/mock-cal.PNG)
+![Web APIs Challenge Mock-Up](./assets/images/mock-cal.png)
 
 
 https://kthomasnj.github.io/EasyPlanner/
