@@ -1,5 +1,6 @@
 var rootEl = $('.container')
 var timeEl = $('#currentDay');
+var saveBtn = $('.savebtn');
 var currentTime = moment().format("dddd, MMMM Do");
 var currentTimeHr = moment().format("ha");
 var hours = [moment.unix(8000000).format("ha"), moment.unix(5500000).format("ha"), moment.unix(1700000).format("ha"), moment.unix(2050000).format("ha"), moment.unix(1450000).format("ha"), moment.unix(7500000).format('ha'), moment.unix(5000000).format('ha'), moment.unix(1200000).format("ha"), moment.unix(9500000).format("ha")];
@@ -32,9 +33,13 @@ function writeHourRows () {
 
         // Append Image to Button DIV
         rowBtn.append(rowBtnImage);
-        rowBtnImage.attr('src', './assets/images/save.png');
+        rowBtnImage.attr('src', './assets/images/save.PNG');
     }
 }
+
+rootEl.click(function () {
+    console.log(timeEl);
+})
 
 timeEl.text(currentTime);
 writeHourRows();
