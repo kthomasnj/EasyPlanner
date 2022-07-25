@@ -33,7 +33,7 @@ function writeHourRows () {
 
         // Append Image to Button DIV
         rowBtn.append(rowBtnImage);
-        rowBtnImage.attr('src', './assets/images/save.PNG');
+        rowBtnImage.attr('src', './assets/images/save.png');
     }
 }
 
