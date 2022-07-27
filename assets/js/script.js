@@ -16,8 +16,6 @@ function writeHourRows() {
         var rowBtn = $('<div>');
         var rowBtnImage = $('<img>');
 
-        console.log(currentTimeHr);
-
          // Use IF-Then statement to change row color
         if (hoursInts[i] === currentTimeHr) {
             hourRowStyle = "present";
@@ -26,12 +24,6 @@ function writeHourRows() {
         } else {
             hourRowStyle = "past";
         }
-
-        console.log(hoursInts[i] + "=" + currentTimeHr + ":" + hourRowStyle);
-
-        // console.log(str);
-
-        // hours[i] < currentTimeHr ? "past" : hours[i] == currentTimeHr ? "present" : "future";
 
         // Create Row Element
         rootEl.append(rowEl);
@@ -65,7 +57,7 @@ rootEl.click(function (event) {
         var index = element.parentElement.getAttribute("data-index");
         var meetingDes = $("#" + index).get(0).value;
 
-        localStorage.setItem(time[index], meetingDes);
+        localStorage.setItem(index, meetingDes);
     }
 })
 
