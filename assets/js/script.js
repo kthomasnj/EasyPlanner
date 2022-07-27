@@ -8,6 +8,34 @@ var hours = [moment("1-1-2027 08:00:00").format("ha"),moment("1-1-2027 09:00:00"
 var hoursInts = [moment("1-1-2027 08:00:00").format("HH"), moment("1-1-2027 09:00:00").format("HH"), moment("1-1-2027 10:00:00").format("H"), moment("1-1-2027 10:00:00").format("HH"), moment("1-1-2027 11:00:00").format("HH"), moment("1-1-2027 12:00:00").format("HH"), moment("1-1-2027 13:00:00").format("HH"), moment("1-1-2027 14:00:00").format("HH"), moment("1-1-2027 15:00:00").format("HH"), moment("1-1-2027 16:00:00").format("HH"), moment("1-1-2027 17:00:00").format("HH"), moment("1-1-2027 18:00:00").format("HH")];
 
 
+function writeFromLocalStorage () {
+    for (let i = 0; i < hours.length; i++) {
+        var hr8 = localStorage.getItem('8am');
+        var hr9 = localStorage.getItem('9am');
+        var hr10 = localStorage.getItem('10am');
+        var hr11 = localStorage.getItem('11am');
+        var hr12 = localStorage.getItem('12pm');
+        var hr13 = localStorage.getItem('1pm');
+        var hr14 = localStorage.getItem('2pm');
+        var hr15 = localStorage.getItem('3pm');
+        var hr16 = localStorage.getItem('4pm');
+        var hr17 = localStorage.getItem('5pm');
+        var hr18 = localStorage.getItem('6pm');
+
+        $('#8am').text(hr8);
+        $('#9am').text(hr9);
+        $('#10am').text(hr10);
+        $('#11am').text(hr11);
+        $('#12pm').text(hr12);
+        $('#1pm').text(hr13);
+        $('#2pm').text(hr14);
+        $('#3pm').text(hr15);
+        $('#4pm').text(hr16);
+        $('#5pm').text(hr17);
+        $('#6pm').text(hr18);
+    }
+ }
+
 function writeHourRows() {
     for (let i = 0; i < hours.length; i++) {
         var rowEl = $('<section>');
@@ -63,3 +91,4 @@ rootEl.click(function (event) {
 
 timeEl.text(currentTime);
 writeHourRows();
+writeFromLocalStorage ()
